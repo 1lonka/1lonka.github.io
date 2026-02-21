@@ -305,7 +305,7 @@
                 background: #111;
             }
         } 
-        @media (max-width: 840px) {
+        @media (max-width: 840px) and (min-width: 769px) {
             nav,
             .categories,
             .image,
@@ -317,52 +317,38 @@
                 max-width: 100%;
                 width: 100%;
             }
+            .features {
+                padding: 3rem 2rem;
+            }
+
+            .card {
+                flex: 1 1 0;
+                max-width: none;
+            }
+
+            .card h2{
+                font-size: 1.3rem;
+                word-break: break-word;
+            }
+            
         }
 
         /* ===== TABLET (max 768px) ===== */
-        @media (max-width: 768px) {
+        @media (max-width: 768px) and (min-width:481px){
             /* Hamburger menu */
-            .nav-toggle {
+
+
+            nav {
                 display: block;
             }
 
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgb(41, 37, 56);
-                padding: 1rem 2rem;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-                z-index: 99;
-            }
-
-            .nav-links.open {
+            .logo{
                 display: flex;
+            align-items: center;
             }
-
-            .nav-links li {
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-links li:last-child {
-                border-bottom: none;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 0.7rem 0;
-                font-size: 1rem;
-            }
-
-            .nav-links .btn-join {
-                margin-top: 0.5rem;
-                display: inline-block;
+            .nav-links {
+                display: flex;
+                font-size: 0.8rem;
             }
 
             /* Kategorie 2x2 */
@@ -391,7 +377,11 @@
                 margin: 15px 10px;
             }
 
-            /* Karty 2 na řádek */
+            .features {
+                flex-wrap: wrap;
+                padding: 2rem 1rem;
+            }
+
             .card {
                 width: calc(50% - 10px);
                 max-width: none;
@@ -414,22 +404,26 @@
                 padding: 2rem 1.5rem;
             }
         }
-
+        
         /* ===== MOBIL (max 480px) ===== */
         @media (max-width: 480px) {
             nav {
                 padding: 0.5rem 1rem;
             }
 
+            .nav-links{
+                display:none;
+            }
+
             .logo {
                 font-size: 1.1rem;
             }
 
-            /* Kategorie pod sebou */
             .category {
                 flex-basis: 100%;
                 height: 44px;
                 font-size: 0.75rem;
+                text-align: center;
             }
 
             .description {
@@ -473,14 +467,10 @@
 
             .footer-column p,
             .footer-column a {
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 line-height: 1.5;
             }
 
-            .footer-inner {
-                padding: 1.2rem 1rem;
-                gap: 1rem;
-            }
         }
 
     </style>
@@ -494,6 +484,7 @@
                 </div>
                 CyberCorp
             </a>
+
             <ul class="nav-links">
                 <li><a href="#">Zprávy z podsvětí</a></li>
                 <li><a href="#">Kybernetika</a></li>
@@ -588,3 +579,7 @@
 </html>
 <!-- https://claude.ai/share/7c14e763-912a-45d8-9f14-9b9cf67ca210 -->
 <!-- https://claude.ai/share/38f81aa9-90c5-4997-86c0-4502e4294ad2 kontrola-->
+
+<!--s responzivitou mi pomohla https://claude.ai/share/52c087a5-cbcd-477f-a18e-8c259582a713
+Nešlo mi moc vymyslet ty nav-links pro menší zařízení, tak jsem dala ať na mobilu to nejde vidět vůbec a pro menší tablet ať to je pod tím logem. Když jsem zkoušela dát logo doprostřed, tak se mi to celý rozbilo, proto je na kraji.
+Nevím jestli jsme si říkali tag figure, ale tady jsem našla co znamená  https://www.w3schools.com/tags/tag_figure.asp-->
